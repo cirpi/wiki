@@ -1,0 +1,23 @@
+{% extends 'encyclopedia/layout.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>{{ title }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea type="text" class="form-control" name="content" id="content"
+                        placeholder="Your markdown text" rows="8">{{ content }}</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
